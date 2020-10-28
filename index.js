@@ -7,7 +7,7 @@ var DIRECTORY = {
     VIDEO_SEARCH_URL: BASE_URL + "videos/search",
     POPULAR_VIDEO_URL: BASE_URL + "videos/popular",
     PHOTO_URL: BASE_URL + "v1/photos/",
-    VIDEO_URL: BASE_URL + "v1/videos/",
+    VIDEO_URL: BASE_URL + "videos/videos/",
 };
 
 /**
@@ -183,6 +183,7 @@ PexelsApi.prototype.getPhoto = function (id) {
  */
 PexelsApi.prototype.getVideo = function (id) {
     var url = DIRECTORY.VIDEO_URL + id;
+    console.log("URL IS ", url);
     return request(this, url);
 };
 
