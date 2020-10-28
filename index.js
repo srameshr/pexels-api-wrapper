@@ -6,7 +6,8 @@ var DIRECTORY = {
     CURATED_URL: BASE_URL + "v1/curated",
     VIDEO_SEARCH_URL: BASE_URL + "videos/search",
     POPULAR_VIDEO_URL: BASE_URL + "videos/popular",
-    PHOTO_URL: BASE_URL + "v1/photos/"
+    PHOTO_URL: BASE_URL + "v1/photos/",
+    VIDEO_URL: BASE_URL + "v1/videos/",
 };
 
 /**
@@ -172,6 +173,16 @@ PexelsApi.prototype.getPopularVideos = function (
  */
 PexelsApi.prototype.getPhoto = function (id) {
     var url = DIRECTORY.PHOTO_URL + id;
+    return request(this, url);
+};
+
+/**
+ * Promise factory to interact with Pexels API to request a specific video by ID
+ * @param {number} id
+ * @returns {Promise}
+ */
+PexelsApi.prototype.getVideo = function (id) {
+    var url = DIRECTORY.VIDEO_URL + id;
     return request(this, url);
 };
 
