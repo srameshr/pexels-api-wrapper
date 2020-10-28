@@ -183,7 +183,6 @@ PexelsApi.prototype.getPhoto = function (id) {
  */
 PexelsApi.prototype.getVideo = function (id) {
     var url = DIRECTORY.VIDEO_URL + id;
-    console.log("URL IS ", url);
     return request(this, url);
 };
 
